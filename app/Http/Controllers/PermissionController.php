@@ -37,4 +37,11 @@ class PermissionController extends Controller
         $permission->save();
         return redirect()->route('permissions.index')->with('success', 'Permission updated successfully');
     }
+
+    public function destroy($id)
+    {
+        $permission = Permission::find($id);
+        $permission->delete();
+        return redirect()->route('permissions.index')->with('success', 'Permission deleted successfully');
+    }
 }

@@ -1,10 +1,10 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="index.html">LegoBatman</a>
+            <a href="index.html">Muhammad Riky</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">LB</a>
+            <a href="index.html">MR</a>
         </div>
         <ul class="sidebar-menu">
             <li class="nav-item">
@@ -14,12 +14,12 @@
             </li>
             <li class="nav-item">
                 <a href="{{ route('users.index') }}"
-                    class="nav-link"><i class="fas fa-columns"></i><span>User</span>
+                    class="nav-link"><i class="fas fa-user"></i><span>User</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{{ route('companies.show', 1) }}"
-                    class="nav-link"><i class="fas fa-columns"></i><span>Company</span>
+                    class="nav-link"><i class="fas fa-building"></i><span>Company</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -29,7 +29,7 @@
             </li>
             <li class="nav-item">
                 <a href="{{ route('permissions.index') }}"
-                    class="nav-link"><i class="fas fa-columns"></i><span>Permissions</span>
+                    class="nav-link"><i class="fas fa-user-injured"></i><span>Permissions</span>
                 </a>
             </li>
     </aside>
