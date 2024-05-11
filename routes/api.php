@@ -31,7 +31,7 @@ Route::post('/checkout', [AttendanceController::class, 'checkout'])->middleware(
 Route::get('/is-checkin', [AttendanceController::class, 'isCheckedin'])->middleware('auth:sanctum');
 
 //update profile
-Route::post('/update-profile', [AttendanceController::class, 'updateProfile'])->middleware('auth:sanctum');
+Route::post('/update-profile', [AuthController::class, 'updateProfile'])->middleware('auth:sanctum');
 
 //create permission
 Route::apiResource('/api-permissions', PermissionController::class)->middleware('auth:sanctum');
