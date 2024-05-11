@@ -70,28 +70,24 @@ class AttendanceController extends Controller
         ], 200);
     }
 
-    //update image profile & face_embedding
-    public function updateProfile(Request $request)
-    {
-        $request->validate([
-            'image' => 'required|image|mimes:jpg,png,jpg|max:2048',
-            'face_embedding' => 'required',
-        ]);
+   //index
+   public function index(Request $request)
+   {
+       $date = $request->input('date');
 
-        $user = $request->user();
-        $image = $request->file('image');
-        $face_embedding = $request->face_embedding;
+       $currentUser = $request->user();
 
-        //save image
-        $image->storeAs('public/images', $image->hashName());
-        $user->image_url = $image->hashName();
-        $user->face_embedding = $face_embedding;
-        $user->save();
+       $query = Attendance::where('user_id', $currentUser->id);
 
-        return response ([
-            'message' => 'Profile Updated',
-            'user' => $user,
-        ], 200);
-    }
+       if ($date) {
+           $query->where('date', $date);
+       }
 
+       $attendance = $query->get();
+
+       return response([
+           'message' => 'Success',
+           'data' => $attendance
+       ], 200);
+   }
 }
