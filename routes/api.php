@@ -38,3 +38,9 @@ Route::apiResource('/api-permissions', PermissionController::class)->middleware(
 
 //note
 Route::apiResource('/api-notes', NoteController::class)->middleware('auth:sanctum');
+
+//update fcm token
+Route::post('/update-fcm-token', [AuthController::class, 'updateFcmToken'])->middleware('auth:sanctum');
+
+//get attendance
+Route::get('/api-attendances', [AttendanceController::class, 'index'])->middleware('auth:sanctum');
